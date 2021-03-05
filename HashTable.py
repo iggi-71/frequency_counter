@@ -28,12 +28,11 @@ class HashTable:
 
   # Hash functions are a function that turns each of these keys into an index value that we can use to decide where in our list each key:value pair should be stored. 
 
+  # Found total ascii value of the string being the key, we then mod it by the size and return the index
   def hash_func(self, key):
     ascii_value = 0
-
-    for i in key:
+    for i in key: 
       ascii_value += ord(i)
-    
     index = ascii_value % self.size
     return index
 
@@ -47,13 +46,13 @@ class HashTable:
     arr_index = self.hash_func(key)
     ll = self.arr[arr_index]
 
-    print(f'Looking for {key} in LinkedList[{arr_index}]')
+    print(f'Checking {key} in LinkedList[{arr_index}]')
 
     if ll.find(key) == -1:
         print(f"{key} was not found")
         ll.append(new_data)
     else:
-        print(f"{key} was found | Now updating...")
+        print(f"{key} was found Now adding one to value")
         ll.update(key, value)
 
 
@@ -68,6 +67,8 @@ class HashTable:
   # and: 1
   # blooms: 1
   # erase: 2$
+
+
 
   def print_key_values(self):
     for ll in self.arr:

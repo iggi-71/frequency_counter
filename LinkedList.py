@@ -38,6 +38,8 @@ class LinkedList:
 
   def update(self, key, value):
     ''' Update method is used to update the value of a key when the key already exist in the linkedlist'''
+
+
     current = self.head
     found = False
     counter = 0
@@ -73,6 +75,7 @@ class LinkedList:
       pass
     else:
       for i in range(self.length()):
-        # Change below
+        # print the current data and the current value
         print(f'{current.data[0]} : {current.data[1]}')
+        #then we would move on to the next element
         current = current.next
